@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "iranSans";
+  src: url("../src/assets/fonts/IRANSansWeb.ttf");
+}
+
+
+
+*{
+  direction: rtl;
+  font-family: "iranSans" !important;
+}
+
+::-webkit-scrollbar{
+  width: 6px;
+  background: #395c89;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb{
+  width: 8px;
+  background: #4a84d0;
+  border-radius: 8px;
+}
+/* HTML: <div class="circle-cut"></div> */
+.circle-cut {
+  --r: 50px; /* cut size */
+  height: 250px;
+  aspect-ratio: 1.2;
+  border-radius: 20px;
+  background: #F07818;
+  mask: radial-gradient(var(--r) at var(--r),#0000 calc(100% - 1px),#000) calc(-1*var(--r));
+}
+.modalBox {
+
+  clip-path: polygon(0 12.91px,26px 26px,12.91px 0,calc(100% - 12.91px) 0,calc(100% - 26px) 26px,100% 12.91px,100% calc(100% - 12.91px),calc(100% - 26px) calc(100% - 26px),calc(100% - 12.91px) 100%,12.91px 100%,26px calc(100% - 26px),0 calc(100% - 12.91px));
+}
+
+
+/* HTML: <div class="rounded-tab"></div> */
+.modalBox-title {
+  --r: 25px; /* control the radius */
+
+  line-height: 1.8; /* control the height */
+  padding-inline: .5em;
+  border-inline: var(--r) solid #0000;
+  border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
+  mask: 
+    radial-gradient(var(--r) at var(--r) 0,#0000 98%,#000 101%)
+      calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
+    conic-gradient(#000 0 0) padding-box;
+  background: #2e88bc border-box; /* border-box is needed for a gradient coloration */
+  width: fit-content;
+}
