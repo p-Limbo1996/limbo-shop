@@ -1,12 +1,13 @@
 import ProductItem from "../../components/productItems/ProductItem";
 import { useProducts } from "../../services/products/useProducts";
 import Loading from "../../components/loading/Loading";
-import Error from "../../components/errors/error";
 
 const Store = () => {
   const { data, loading, error } = useProducts();
 
-  if (error) return <Error error={error} />;
+  if (error) {
+    return <>error</>;
+  }
   if (loading) return <Loading />;
 
   return (

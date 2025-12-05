@@ -1,5 +1,4 @@
 import Button from "../../components/button/Button";
-import Error from "../../components/errors/error";
 import Loading from "../../components/loading/Loading";
 import { useProducts } from "../../services/products/useProducts";
 
@@ -7,7 +6,7 @@ const Cart = () => {
   const { data, loading, error } = useProducts();
 
   if (error) {
-    return <Error />;
+    return <>error</>
   }
   if (loading) {
     return <Loading />;
