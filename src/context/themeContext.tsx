@@ -20,7 +20,11 @@ export const ThemeContextProvider = ({ children }: TThemeContextProvider) => {
   });
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => {
+      const newTheme = prev === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
   };
 
   return (

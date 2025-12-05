@@ -27,11 +27,17 @@ const Navbar = () => {
 
   return (
     <Container>
-      <nav className={`
-        ${theme === "light" ?"border-gray-300 bg-gray-200 text-gray-700 ": "border-gray-700 text-white  bg-gray-800 "}
+      <nav
+        className={`
+        ${
+          theme === "light"
+            ? "border-gray-300 bg-gray-200 text-gray-700 "
+            : "border-gray-700 text-white  bg-gray-800 "
+        }
 
         h-13 px-6 flex  justify-between  items-center   rounded-xl 
-        border shadow`}>
+        border shadow`}
+      >
         <ul className="flex  items-center h-full gap-6">
           {navLinks.map((link) => (
             <li key={link.name} className="  flex items-center gap-1">
@@ -51,8 +57,11 @@ const Navbar = () => {
         </ul>
 
         <div className="flex gap-2">
-          <button onClick={toggleTheme} className="cursor-pointer hover:scale-105">
-            {theme === "light" ?  <Moon size={24}/>:  <Sun size={24} />}
+          <button
+            onClick={toggleTheme}
+            className="cursor-pointer hover:scale-105"
+          >
+            {theme === "light" ? <Moon size={24} /> : <Sun size={24} />}
           </button>
 
           <div className="relative">
