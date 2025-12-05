@@ -1,18 +1,11 @@
-import {
-  BaggageClaim,
-  PackageSearch,
-  Search,
-  SquarePen,
-  Trash,
-  UsersRound,
-} from "lucide-react";
-import { use, useState } from "react";
-import ManageProducts from "./manageProducts/manageProducts";
+import { BaggageClaim, PackageSearch, UsersRound } from "lucide-react";
+import { useState } from "react";
 import Modal from "../../components/modals/Modal";
+import ManageProducts from "./manageProducts/ManageProducts";
 
 const Admin = () => {
   const [activeTab, setActiveTab] = useState<string>("products");
-console.log(activeTab);
+  console.log(activeTab);
 
   const adminMenu = [
     {
@@ -63,18 +56,9 @@ console.log(activeTab);
           </div>
         </aside>
 
-    
-        {activeTab === "products" && (
-        <ManageProducts/>
-        )}
+        {activeTab === "products" && <ManageProducts />}
 
-
-            {activeTab === "users" && (
-          <div className="bg-red-200 w-full ">
-<Modal/>
-          
-          </div>
-        )}
+        {activeTab === "users" && <div className="bg-red-200 w-full "></div>}
       </div>
     </div>
   );

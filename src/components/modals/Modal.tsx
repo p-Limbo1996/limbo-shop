@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { createPortal } from "react-dom";
-import type { Product } from "../../types/productTypes";
 
 type TModalActionButton = {
   label: string;

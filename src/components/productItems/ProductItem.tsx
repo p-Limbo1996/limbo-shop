@@ -1,6 +1,6 @@
 import { CirclePlus } from "lucide-react";
 import { Link } from "react-router-dom";
-import type { Product } from "../../types/productTypes";
+import type { IProduct } from "../../types/productTypes";
 
 // interface Props {
 //   id: number;
@@ -9,7 +9,7 @@ import type { Product } from "../../types/productTypes";
 //   image: string;
 // }
 
-const ProductItem = (item: Product) => {
+const ProductItem = (item: IProduct) => {
   console.log("item", item);
 
   return (
