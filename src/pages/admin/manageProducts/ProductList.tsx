@@ -1,7 +1,7 @@
 import { SquarePen, Trash } from "lucide-react";
 import Loading from "../../../components/loading/Loading";
-import Error from "../../../components/errors/error";
 import type { IProduct } from "../../../types/productTypes";
+import Error from "../../../components/errors/error";
 
 type TProductList = {
   data: IProduct[];
@@ -11,7 +11,9 @@ type TProductList = {
 };
 
 const ProductList = ({ data, loading, error, handleDelete }: TProductList) => {
-  if (error) return <Error error="" />;
+ 
+ 
+    if (error) return <Error error="" />;
   if (loading) return <Loading />;
 
   return (
