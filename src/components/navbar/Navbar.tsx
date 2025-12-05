@@ -34,8 +34,8 @@ const Navbar = () => {
                   } flex items-center space-x-1`
                 }
               >
-                <span  >{link.icon}</span>
-                <span>{link.name}</span>
+                <span   >{link.icon}</span>
+                <span className="md:block hidden">{link.name}</span>
 
               </NavLink>
             </li>
