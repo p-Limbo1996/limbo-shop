@@ -6,7 +6,7 @@ import Error from "../../components/errors/error";
 const Store = () => {
   const { data, loading, error } = useProducts();
 
-  if (error) return <Error />;
+  if (error) return <Error error={error} />;
   if (loading) return <Loading />;
 
   return (

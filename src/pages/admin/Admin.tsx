@@ -1,6 +1,5 @@
 import { BaggageClaim, PackageSearch, UsersRound } from "lucide-react";
 import { useState } from "react";
-import Modal from "../../components/modals/Modal";
 import ManageProducts from "./manageProducts/ManageProducts";
 
 const Admin = () => {

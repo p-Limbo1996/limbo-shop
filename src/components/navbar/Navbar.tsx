@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <Container>
-      <nav className="h-12 px-6 flex  justify-between  items-center   rounded-xl border border-gray-300 bg-gray-200 shadow">
+      <nav className="h-13 px-6 flex  justify-between  items-center   rounded-xl border border-gray-300 bg-gray-200 shadow">
         <ul className="flex  items-center h-full gap-6">
           {navLinks.map((link) => (
             <li key={link.name} className="  flex items-center gap-1">

@@ -11,7 +11,7 @@ type TProductList = {
 };
 
 const ProductList = ({ data, loading, error, handleDelete }: TProductList) => {
-  if (error) return <Error />;
+  if (error) return <Error error="" />;
   if (loading) return <Loading />;
 
   return (
