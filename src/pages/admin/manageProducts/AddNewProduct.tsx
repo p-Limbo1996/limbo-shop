@@ -2,6 +2,7 @@ import { useState, type Dispatch, type SetStateAction } from "react";
 import { productFields } from "../../../data/productFormFields";
 import Modal from "../../../components/modals/Modal";
 import type { IProduct } from "../../../types/productTypes";
+import { useTheme } from "../../../context/themeContext";
 
 type TAddNewProduct = {
   isOpen: boolean;
@@ -37,7 +38,7 @@ const AddNewProduct = ({
     await handleAddProduct(formData);
     handleCloseModal();
   };
-
+  const { theme } = useTheme();
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -57,7 +58,16 @@ const AddNewProduct = ({
         {productFields.map((i) => (
           <div className="flex relative flex-col mb-5 h-full" key={i.name}>
             <label
-              className="absolute -top-2 text-xs right-3 bg-white z-10 mb-1 font-medium text-gray-700"
+              className={`
+                
+                ${
+                  theme === "light"
+                    ? "bg-white text-gray-700"
+                    : "bg-gray-900 px-2 rounded-lg  text-gray-400"
+                }
+                
+                
+                absolute -top-2 text-xs right-3  z-10 mb-1 font-medium `}
               htmlFor={i.name}
             >
               {i.label}
@@ -69,7 +79,19 @@ const AddNewProduct = ({
               placeholder={i.placeholder}
               onChange={handleInputChange}
               value={formData[i.name as keyof typeof formData] ?? ""}
-              className="px-4 text-sm placeholder:text-xs text-center border-r-3 border-r-blue-200 shadow-inner bg-white border-gray-200 py-2 rounded-lg border-2 focus:border-2 focus:border-blue-200 focus:outline-0 transition backdrop-blur-sm"
+              className={`
+                
+                  ${
+                    theme === "light"
+                      ? " bg-white border-gray-200 border-r-indigo-200 focus:border-indigo-200"
+                      : "bg-gray-900 focus:border-gray-600 border-gray-800 text-white  border-r-gray-600"
+                  }
+                
+                
+                px-4 text-sm placeholder:text-xs text-center border-r-3
+                shadow-inner  py-2
+                rounded-lg border-2 focus:border-2  focus:outline-0
+                 transition backdrop-blur-sm`}
             />
           </div>
         ))}

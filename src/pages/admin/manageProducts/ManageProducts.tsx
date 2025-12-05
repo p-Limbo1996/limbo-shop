@@ -9,6 +9,7 @@ import {
 import { useProducts } from "../../../services/products/useProducts";
 import type { IProduct } from "../../../types/productTypes";
 import AddNewProduct from "./AddNewProduct";
+import { useTheme } from "../../../context/themeContext";
 
 const ManageProducts = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,15 +36,21 @@ const ManageProducts = () => {
       console.error(err);
     }
   };
+  const {theme} = useTheme() 
   const handleSearch = () => {
     toast.success("سرچ با موفقیت انجام شد");
   };
   return (
     <div className="lg:col-span-3 col-span-4    space-y-4  ">
-      <div className="flex justify-between border p-4 rounded-xl shadow border-gray-100 px-4">
+      <div className={`
+      ${theme==="light"
+          ?"border-gray-100":"border-gray-700 bg-gray-800 "}
+      
+      flex justify-between border p-4
+         rounded-xl shadow  px-4`}>
         <button
           onClick={() => setIsOpen(true)}
-          className="border  cursor-pointer hover:scale-105 hover:bg-blue-600 rounded-xl px-4 py-2   bg-blue-500 text-white"
+          className="  cursor-pointer hover:scale-105 hover:bg-indigo-600 rounded-xl px-4 py-2   bg-indigo-500 text-white"
         >
           افزودن کالا
         </button>

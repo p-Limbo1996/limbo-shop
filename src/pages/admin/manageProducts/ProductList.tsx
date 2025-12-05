@@ -1,6 +1,8 @@
 import { SquarePen, Trash } from "lucide-react";
 import Loading from "../../../components/loading/Loading";
 import type { IProduct } from "../../../types/productTypes";
+import { use } from "react";
+import { useTheme } from "../../../context/themeContext";
 
 type TProductList = {
   data: IProduct[];
@@ -10,6 +12,8 @@ type TProductList = {
 };
 
 const ProductList = ({ data, loading, error, handleDelete }: TProductList) => {
+  const { theme } = useTheme();
+
   if (error) {
     return <>error</>;
   }
@@ -19,12 +23,46 @@ const ProductList = ({ data, loading, error, handleDelete }: TProductList) => {
     <div className="space-y-4 bgre">
       {data.map((item, idx) => (
         <div className="pr-11" key={idx}>
-          <div className="relative w-full flex gap-4 pr-12 items-center p-4 border-blue-100 rounded-xl border border-r-0">
-            <div className="w-22 h-22 absolute rounded-full border-blue-300 -right-11 border-l"></div>
-            <div className="w-20 h-20 hover:scale-x-[-1] transition-all duration-300 delay-100 overflow-hidden absolute rounded-full bg-blue-100 border-blue-300 hover:border-blue-400 drop-shadow-blue-500 -right-11 border-r-8 border">
+          <div
+            className={` ${
+              theme === "light"
+                ? "border-indigo-100"
+                : "border-gray-700 text-white bg-gray-800"
+            } relative w-full flex gap-4 pr-12
+           items-center p-4  rounded-xl border border-r-0`}
+          >
+            <div
+              className={`
+              
+              ${
+                theme === "light"
+                  ? "border-indigo-300"
+                  : "border-gray-500  bg-gray-900"
+              }
+              
+              
+              
+              
+              w-22 h-22 absolute rounded-full  -right-11 border-l`}
+            ></div>
+            <div
+              className={`w-20 h-20 hover:scale-x-[-1] transition-all
+             duration-300 delay-100 overflow-hidden absolute rounded-full
+             
+
+
+    ${
+      theme === "light"
+        ? "  bg-indigo-100 border-indigo-300  hover:border-indigo-400"
+        : "  bg-gray-900 border-gray-600  hover:border-gray-700"
+    }
+
+                -right-11 border-r-8 border`}
+            >
               <img
                 src={item.image_url}
-                className="object-center object-cover img-fluid bg-gray-600 bg-blend-luminosity h-20"
+                className="object-center object-cover img-fluid bg-gray-600
+                 bg-blend-luminosity h-20"
                 alt={`product-${idx}`}
               />
             </div>

@@ -18,7 +18,7 @@ const Layout = ({ children }: ILayout) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-          toastClassName="bg-blue-200!  "
+          toastClassName="bg-indigo-200!  "
 
         theme="light"
         transition={Bounce}

@@ -18,11 +18,11 @@ const Button = ({ children, className ="", variant, ...props }: TButton) => {
 export default Button;
 
 function checkVariant(variant: TVariant) {
-  const baseClass = "rounded h-10 px-2 flex-1 text-sm whitespace-nowrap shadow  text-gray-600 font-semibold border-b-2 border-blue-400 hover:border-blue-800 transition";
+  const baseClass = "rounded h-10 px-2 flex-1 text-sm whitespace-nowrap shadow  text-gray-600 font-semibold border-b-2 border-indigo-400 hover:border-indigo-800 transition";
 
   switch (variant) {
     case "submit":
-      return `bg-blue-100 text-black  ${baseClass}`;
+      return `bg-indigo-100 text-black  ${baseClass}`;
 
     case "back":
       return `bg-gray-300 text-black ${baseClass}`;
