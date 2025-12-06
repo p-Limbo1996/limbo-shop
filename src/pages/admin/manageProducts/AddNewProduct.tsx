@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import {  useState, type Dispatch, type SetStateAction } from "react";
 import { productFields } from "../../../data/productFormFields";
 import Modal from "../../../components/modals/Modal";
 import type { IProduct } from "../../../types/productTypes";

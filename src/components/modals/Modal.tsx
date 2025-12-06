@@ -1,6 +1,7 @@
-import type { ReactNode } from "react";
+import {  type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../../context/themeContext";
+import { useDisableBodyScroll } from "../../hooks/useDisableBodyScroll";
 
 type TModalActionButton = {
   label: string;
@@ -22,6 +23,10 @@ const Modal = ({
   children,
   actionButton,
 }: TModal) => {
+
+  // DisableBodyScroll
+  useDisableBodyScroll(isOpen);
+
   if (!isOpen) return null;
 
   const { theme } = useTheme();
@@ -32,7 +37,7 @@ const Modal = ({
         className={`
           
       
-          flex relative min-w-96  max-w-11/12 max-h-[80vh] min-h-[500px] items-stretch justify-start  md:max-w-9/12 xl:max-w-7/12 2xl:max-w-6/12
+          flex relative min-w-11/12 sm:min-w-96  max-w-11/12 max-h-[80vh] min-h-[500px] items-stretch justify-start  md:max-w-9/12 xl:max-w-7/12 2xl:max-w-6/12
         `}
       >
         <div

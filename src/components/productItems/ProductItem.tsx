@@ -66,10 +66,10 @@ const ProductItem = (item: IProduct) => {
               }
 p-3 border-2 border-t-4  rounded-xl`}
         >
-          <h3 className="text-center pb-2 text-indigo-500 line-clamp-1 ">
+          <h3 className="text-center pb-2 text-indigo-500 line-clamp-1 truncate text-sm ">
             {item?.name}
           </h3>
-          <p className="line-clamp-1 leading-5 pb-6 text-center text-xs   rtl:text-right ltr:text-left">
+          <p className="line-clamp-2 leading-5 pb-6 text-center text-xs   rtl:text-right ltr:text-left">
             {item?.description}
           </p>
         </div>

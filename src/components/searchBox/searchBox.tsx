@@ -23,7 +23,7 @@ const SearchBox = ({ title = "جستوجو", onClick }: TSearchBox) => {
     >
       <input
         type="text"
-        className=" rounded-lg placeholder:text-xs text-sm px-2 pl-14 
+        className=" rounded-lg placeholder:text-xs text-sm px-2 lg:pl-14 pl-4 
             focus:outline-indigo-300 
               h-10"
         placeholder={title}
@@ -32,7 +32,7 @@ const SearchBox = ({ title = "جستوجو", onClick }: TSearchBox) => {
       />
       <Search
         onClick={onClick}
-        className="absolute cursor-pointer hover:text-indigo-500 text-gray-400 left-2 top-1/2 -translate-y-1/2 *:
+        className="absolute  cursor-pointer hover:text-indigo-500 text-gray-400 left-2 top-1/2 -translate-y-1/2 *:
             "
       />
     </div>

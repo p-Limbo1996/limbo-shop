@@ -50,7 +50,7 @@ const ManageProducts = () => {
          rounded-xl shadow  px-4`}>
         <button
           onClick={() => setIsOpen(true)}
-          className="  cursor-pointer hover:scale-105 hover:bg-indigo-600 rounded-xl px-4 py-2   bg-indigo-500 text-white"
+          className="  cursor-pointer hover:scale-105 hover:bg-indigo-600 rounded-xl  lg:text-md text-sm px-4 py-2   bg-indigo-500 text-white"
         >
           افزودن کالا
         </button>

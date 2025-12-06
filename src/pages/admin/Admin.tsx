@@ -57,7 +57,7 @@ const Admin = () => {
             {adminMenu.map((menuItem) => {
               const isActive = activeTab === menuItem.name;
               const baseClasses =
-                "flex w-full cursor-pointer h-14 duration-300 translate-all rounded-xl gap-4 items-center justify-center";
+                "flex w-full cursor-pointer h-14 duration-300 translate-all rounded-xl lg:gap-4 text-sm gap-1 items-center justify-center";
               const activeClasses = isActive
                 ? "border-r-6 border border-indigo-300"
                 : "border border-gray-300";
