@@ -1,12 +1,12 @@
-import {  type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "../../context/themeContext";
 import { useDisableBodyScroll } from "../../hooks/useDisableBodyScroll";
+import { useCloseOnEscape } from "../../hooks/useCloseOnEscape ";
 
-type TModalActionButton = {
+type TModalActionButton<T = void> = {
   label: string;
-  onClick: () => void;
-};
+onClick: (arg?: T) => void;};
 
 type TModal = {
   title: string;
@@ -23,9 +23,9 @@ const Modal = ({
   children,
   actionButton,
 }: TModal) => {
-
   // DisableBodyScroll
   useDisableBodyScroll(isOpen);
+  useCloseOnEscape(isOpen, onClose);
 
   if (!isOpen) return null;
 

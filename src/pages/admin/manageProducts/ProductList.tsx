@@ -1,7 +1,10 @@
-import { SquarePen, Trash } from "lucide-react";
+import { MessageCircleWarning, SquarePen, Trash } from "lucide-react";
 import Loading from "../../../components/loading/Loading";
 import type { IProduct } from "../../../types/productTypes";
 import { useTheme } from "../../../context/themeContext";
+import Modal from "../../../components/modals/Modal";
+import { useState, type Dispatch, type SetStateAction } from "react";
+import AddNewProduct from "./AddNewProduct";
 
 type TProductList = {
   data: IProduct[];
@@ -12,6 +15,13 @@ type TProductList = {
 
 const ProductList = ({ data, loading, error, handleDelete }: TProductList) => {
   const { theme } = useTheme();
+  // const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectItem, setSelectItem] = useState<IProduct | null>(null);
+  const deleteModalisOpen = !!selectItem;
+
+  // const handleCloseModal = () => {
+  //   setIsOpen(false);
+  // };
 
   if (error) {
     return <>error</>;
@@ -90,13 +100,74 @@ const ProductList = ({ data, loading, error, handleDelete }: TProductList) => {
 
                   <button
                     className="w-8 rounded-lg p-1 cursor-pointer hover:scale-105 h-8 text-red-400 hover:text-red-500 border inline-flex items-center justify-center"
-                    onClick={() => handleDelete(item.id as string)}
+                    onClick={() => setSelectItem(item)}
                   >
                     <Trash />
                   </button>
                 </div>
               </div>
             </div>
+
+           
+
+            <Modal
+              isOpen={deleteModalisOpen}
+              onClose={() => setSelectItem(null)}
+              actionButton={{
+                label: "حذف",
+                onClick: () => {
+                  if (selectItem) handleDelete(selectItem.id as string);
+                  setSelectItem(null);
+                },
+              }}
+              title="حذف محصول"
+            >
+              <div className="flex flex-col gap-5  items-center">
+                <div className="flex items-center gap-6 ">
+                  <MessageCircleWarning
+                    size={62}
+                    className="mb-10 text-indigo-400"
+                  />
+                  <p className="text-indigo-400 font-bold text-xl">
+                    آیا مطمعن هستید که میخواهید این محصول را حذف کنید ؟
+                  </p>
+                </div>
+                <div
+                  className={` ${
+                    theme === "light" ? "text-gray-700" : "text-gray-300"
+                  }  flex gap-6 border border-indigo-300/50 items-center p-2 rounded-xl`}
+                >
+                  <img
+                    src={selectItem?.image_url}
+                    className="w-36 h-36 rounded-xl"
+                    alt=""
+                  />
+                  <div className="grid lg:grid-cols-3 grid-cols-2 ">
+                    <div className="flex flex-col gap-2 item-center text-center">
+                      <p className="w-full pb-4  text-indigo-300 text-center border-b">
+                        نام
+                      </p>{" "}
+                      <span className="pt-2">{selectItem?.name}</span>
+                    </div>
+                    <div className="flex flex-col gap-2 item-center text-center">
+                      <p className="w-full pb-4  text-indigo-300 text-center border-b">
+                        قیمت
+                      </p>{" "}
+                      <span className="pt-2">{selectItem?.price}</span>
+                    </div>
+                    <div className="lg:flex flex-col gap-2 item-center text-center hidden">
+                      <p className="w-full pb-4  text-indigo-300 text-center border-b ">
+                        توضیحات
+                      </p>{" "}
+                      <span className="pt-2 line-clamp-2">
+                        {selectItem?.description}
+                      </span>
+                    </div>
+                  </div>
+                  {}
+                </div>
+              </div>
+            </Modal>
           </div>
         </div>
       ))}

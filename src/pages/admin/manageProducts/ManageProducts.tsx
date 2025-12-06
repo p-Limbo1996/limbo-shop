@@ -15,6 +15,12 @@ const ManageProducts = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { data, loading, error, refetch } = useProducts();
 
+
+
+
+
+
+  
   const handleAddProduct = async (product: IProduct) => {
     try {
       await addProduct(product);
