@@ -1,7 +1,6 @@
 import { SquarePen, Trash } from "lucide-react";
 import Loading from "../../../components/loading/Loading";
 import type { IProduct } from "../../../types/productTypes";
-import { use } from "react";
 import { useTheme } from "../../../context/themeContext";
 
 type TProductList = {
