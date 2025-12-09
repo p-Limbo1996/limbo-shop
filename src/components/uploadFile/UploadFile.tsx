@@ -53,6 +53,7 @@ const UploadFile = ({ onUploadComplete }: IUploadFile) => {
     const { data, error } = await supabase.storage
       .from("product-images")
       .upload(path, file);
+console.log(data);
 
     if (error) {
       console.error(error);

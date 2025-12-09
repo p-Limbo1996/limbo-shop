@@ -3,7 +3,7 @@ import Layout from "./layout/Layout";
 import { lazy, Suspense } from "react";
 import { Loader } from "lucide-react";
 import { useTheme } from "./context/themeContext";
-import  bg  from "./assets/image/bg.png";
+// import  bg  from "./assets/image/bg.png";
 
 const Store = lazy(() => import("./pages/store/Store"));
 const Cart = lazy(() => import("./pages/cart/Cart"));
@@ -21,7 +21,7 @@ const App = () => {
     <div className={` transition-all duration-500  ${theme === "light" ? "" : "bg-gray-900 "}`}>
      
      
-      {/* <img src={bg} alt="" className="absolute inset-0 w-full object-top right-0 z-[-1]  opacity-40" /> */}
+      {/* <img src={bg} alt="" className="absolute inset-0 w-full object-top right-0 z-[-1] top-28 h-[40vw] opacity-20" /> */}
       <div
         className={`container    mx-auto px-4  rounded-xl flex flex-col pt-6  z-10 `}
       >
