@@ -24,7 +24,7 @@ const Layout = ({ children }: ILayout) => {
         transition={Bounce}
       />
       <Navbar />
-      <div className=" rounded-xl  min-h-[calc(100vh-96px)] mt-4 flex flex-col  ">
+      <div className=" rounded-xl  min-h-[calc(100vh-76px)] py-6 flex flex-col  ">
         {children}
       </div>
     </>

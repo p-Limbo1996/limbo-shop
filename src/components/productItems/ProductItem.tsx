@@ -18,7 +18,7 @@ const ProductItem = (item: IProduct) => {
     <Link
       to={`/productDetails/${item?.id}`}
       className={`${theme === "light" ? "border-indigo-200" : "border-gray-600"}
-  w-full hover:scale-105 hover:border-x-2     duration-500  border-t-0  rounded-xl transition-all `}
+  w-full hover:scale-105 hover:border-x-2     duration-500   border-t-0  rounded-xl transition-all `}
     >
       <div
         className={` rounded-t-xl transition-all duration-500 mt-12 bg-linear-to-b
@@ -35,7 +35,7 @@ const ProductItem = (item: IProduct) => {
             className={`
               ${theme === "light" ? "bg-indigo-100 " : "bg-gray-300  "}
               
-              h-40 absolute modalBox  rounded-4xl  right-3 left-3  hover:scale-x-[-1]  transition-all duration-300 delay-100
+              h-40 absolute modalBox neumorphism  rounded-4xl  right-3 left-3  hover:scale-x-[-1]  transition-all duration-300 delay-100
           overflow-hidden    
             -top-14   `}
           >

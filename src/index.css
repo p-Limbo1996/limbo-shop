@@ -53,3 +53,12 @@
   background: #2e88bc border-box; /* border-box is needed for a gradient coloration */
   width: fit-content;
 }
+
+
+
+.neumorphism{
+border-radius: 48px;
+background: #e0e0e0;
+box-shadow: inset 13px 13px 34px #eeecec,
+            inset -13px -13px 34px #b4addd90;
+}

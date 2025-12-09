@@ -6,7 +6,8 @@ import { useCloseOnEscape } from "../../hooks/useCloseOnEscape ";
 
 type TModalActionButton<T = void> = {
   label: string;
-onClick: (arg?: T) => void;};
+  onClick: (arg?: T) => void;
+};
 
 type TModal = {
   title: string;
@@ -37,7 +38,7 @@ const Modal = ({
         className={`
           
       
-          flex relative min-w-11/12 sm:min-w-96  max-w-11/12 max-h-[80vh] min-h-[500px] items-stretch justify-start  md:max-w-9/12 xl:max-w-7/12 2xl:max-w-6/12
+          flex relative min-w-[450px]   max-w-11/12 max-h-[80vh] min-h-[600px] items-stretch justify-start  md:max-w-9/12 xl:max-w-7/12 2xl:max-w-6/12
         `}
       >
         <div
@@ -54,18 +55,18 @@ const Modal = ({
           className={`
                 ${theme === "light" ? " bg-white " : "bg-gray-800  "}
             
-            relative modalBox flex-1 p-6 px-8 sm:p-12 pt-10
+            relative modalBox flex-1 p-6 px-8 sm:p-10 pt-10
             flex flex-col     rounded-[40px]  
         
       
           transform transition-transform duration-300`}
         >
           {/* content */}
-          <div className="h-[86%] flex items-start p-2 justify-center overflow-y-auto">
+          <div className="h-[86%] flex items-start p-4 justify-center overflow-y-auto">
             {children || "محتوایی برای نمایش وجود ندارد"}
           </div>
           {/* footer */}
-          <div className=" mt-auto lg:-mb-8 flex justify-center gap-2 items-center border-t border-gray-200 pt-4">
+          <div className=" mt-auto lg:-mb-5 flex justify-center gap-2 items-center border-t border-gray-200 pt-4">
             <button
               className="bg-red-200 hover:cursor-pointer hover:scale-105 h-9 px-6 text-sm rounded-xl"
               onClick={onClose}
@@ -76,7 +77,7 @@ const Modal = ({
             {/* در Modal */}
             {actionButton && (
               <button
-                className="bg-indigo-200 hover:cursor-pointer hover:scale-105 h-9 px-6 text-sm rounded-xl"
+                className="bg-indigo-300 hover:cursor-pointer hover:scale-105 h-9 px-6 text-sm rounded-xl"
                 onClick={() => {
                   // actionButton.onClick باید فرم رو دریافت کنه
                   actionButton.onClick?.();

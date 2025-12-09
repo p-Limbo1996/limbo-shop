@@ -9,10 +9,5 @@ export interface IProduct {
 }
 
 
-// export interface ProductForm {
-//   name: string;
-//   image_url?: string;
-//   description?: string;
-//   price?: number | null;
-//   category_id?: number | null;
-// }
+export type TModalType="add"|"edit"|"delete";
+

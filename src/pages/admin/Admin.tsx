@@ -50,7 +50,7 @@ const Admin = () => {
           flex lg:flex-col gap-2 w-full items-center pb-6 border-b
            `}
           >
-            <img src="" className="w-16 h-16 bg-indigo-300 rounded-full" alt="" />
+            {/* <img src={null} className="w-16 h-16 bg-indigo-300 rounded-full" alt="" /> */}
             <p>نام ادمین</p>
           </div>
           <div className="flex lg:flex-col flex-1 gap-3 items-stretch">

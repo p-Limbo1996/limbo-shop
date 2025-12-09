@@ -8,6 +8,27 @@ export const getAllProducts = async (): Promise<IProduct[]> => {
   return data ?? [];
 };
 
+
+
+
+export const getProductById = async (id: string): Promise<IProduct | null> => {
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+    .eq("id", id)
+    .single(); // 👈 یک رکورد میاره
+
+  if (error) throw error;
+  return data;
+};
+
+
+
+
+
+
+
+
 export const addProduct = async (product: IProduct) => {
 
   console.log(product);
