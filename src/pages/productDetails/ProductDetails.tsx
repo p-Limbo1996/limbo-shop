@@ -16,7 +16,6 @@ import {
 import { User, Tag, Shield, Truck } from "lucide-react";
 
 import Loading from "../../components/loading/Loading";
-import Admin from "../admin/Admin";
 import ProductInfo from "./ProductInfoTabs";
 
 const ProductDetails = () => {

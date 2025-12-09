@@ -1,6 +1,4 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import CategoriesList, {
-  techCategories,
 } from "../../components/categoriesList/CategoriesList";
 import TopProducts from "../../components/productItems/TopProducts";
 import { Link } from "react-router-dom";

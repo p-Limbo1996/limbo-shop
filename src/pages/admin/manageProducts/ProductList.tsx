@@ -1,8 +1,6 @@
 import {
   CircleAlert,
   Eye,
-  Link2,
-  MessageCircleWarning,
   SquarePen,
   Trash,
 } from "lucide-react";

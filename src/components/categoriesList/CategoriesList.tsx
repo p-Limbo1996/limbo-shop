@@ -9,7 +9,7 @@ import {
   Globe,
   Monitor,
   Cpu,
-  ArrowLeft,
+  
 } from "lucide-react";
 
 export const techCategories = [

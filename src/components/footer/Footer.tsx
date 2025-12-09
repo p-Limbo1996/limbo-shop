@@ -5,7 +5,7 @@ import { useTheme } from "../../context/themeContext";
 import wave from "../../assets/image/wave.svg";
 
 const Footer = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   const navLinks = [
     { name: "صفحه اصلی", path: "/", icon: <House size={18} /> },
