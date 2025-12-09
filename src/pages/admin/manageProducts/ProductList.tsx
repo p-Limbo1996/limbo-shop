@@ -1,4 +1,11 @@
-import { MessageCircleWarning, SquarePen, Trash } from "lucide-react";
+import {
+  CircleAlert,
+  Eye,
+  Link2,
+  MessageCircleWarning,
+  SquarePen,
+  Trash,
+} from "lucide-react";
 import Loading from "../../../components/loading/Loading";
 import type { IProduct } from "../../../types/productTypes";
 import { useTheme } from "../../../context/themeContext";
@@ -18,19 +25,15 @@ type TProductList = {
   data: IProduct[];
   loading: boolean;
   error: boolean;
-  refetch:()=>void
+  refetch: () => void;
 };
 
-const ProductList = ({ data, loading, error,refetch }: TProductList) => {
+const ProductList = ({ data, loading, error, refetch }: TProductList) => {
   const { theme } = useTheme();
   const [addModal, setAddModal] = useState<boolean>(false);
   const [editModal, setEditModal] = useState<boolean>(false);
   const [deleteModal, setDeleteModal] = useState<boolean>(false);
   const [selectItem, setSelectItem] = useState<IProduct | null>(null);
-
-
-  
-
 
   const handleDeleteProduct = async (id: string) => {
     try {
@@ -53,17 +56,16 @@ const ProductList = ({ data, loading, error,refetch }: TProductList) => {
       toast.error(err.message || "خطای ناشناخته");
     }
   };
-const handleEditProduct = async (id: string, product: IProduct) => {
-  try {
-    await updateProduct(id, product);
-    toast.success("محصول با موفقیت ویرایش شد");
-    setEditModal(false); 
-    refetch();
-  } catch (err: any) {
-    toast.error(err.message || "خطای ناشناخته");
-  }
-};
-
+  const handleEditProduct = async (id: string, product: IProduct) => {
+    try {
+      await updateProduct(id, product);
+      toast.success("محصول با موفقیت ویرایش شد");
+      setEditModal(false);
+      refetch();
+    } catch (err: any) {
+      toast.error(err.message || "خطای ناشناخته");
+    }
+  };
 
   const handleSearch = () => {
     toast.success("سرچ با موفقیت انجام شد");
@@ -99,7 +101,6 @@ const handleEditProduct = async (id: string, product: IProduct) => {
 
       {data.map((item, idx) => (
         <div className="pr-11 " key={idx}>
-          <Link  to={`/productDetails/${item.id}`}  key={idx}>
           <div
             className={` ${
               theme === "light"
@@ -161,18 +162,32 @@ const handleEditProduct = async (id: string, product: IProduct) => {
                 <p>{item.price ? item.price.toLocaleString() : "-"}</p>
               </div>
 
-              <div className="flex flex-col gap-4 items-center">
+              <div className="flex flex-col gap-4 z-50 items-center">
                 <p className="text-xs">عملیات</p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 z-50">
+                  <Link
+                    to={`/productDetails/${item.id}`}
+                    key={idx}
+                    title="جزئیات"
+                    className="w-8 rounded-lg p-1 cursor-pointer hover:scale-105 h-8 text-sky-600 hover:text-sky-600 border inline-flex items-center justify-center"
+                  >
+                    {" "}
+                    <Eye />{" "}
+                  </Link>
+
                   <button
-                    onClick={() => openEditModal(item)}
+                                       title="ویرایش"
+
+                   onClick={() => openEditModal(item)}
                     className="w-8 rounded-lg p-1 cursor-pointer hover:scale-105 h-8 text-orange-400 hover:text-orange-500 border inline-flex items-center justify-center"
                   >
                     <SquarePen />
                   </button>
 
                   <button
-                    className="w-8 rounded-lg p-1 cursor-pointer hover:scale-105 h-8 text-red-400 hover:text-red-500 border inline-flex items-center justify-center"
+                                                         title="حذف"
+
+                    className="w-8 rounded-lg p-1 z-50 cursor-pointer hover:scale-105 h-8 text-red-400 hover:text-red-500 border inline-flex items-center justify-center"
                     onClick={() => {
                       setSelectItem(item);
                       setDeleteModal(true);
@@ -184,7 +199,6 @@ const handleEditProduct = async (id: string, product: IProduct) => {
               </div>
             </div>
           </div>
-          </Link>
         </div>
       ))}
 
@@ -203,19 +217,22 @@ const handleEditProduct = async (id: string, product: IProduct) => {
           product={selectItem}
           isOpen={editModal}
           setIsOpen={setEditModal}
-         handleSubmit={(product) => handleEditProduct(selectItem?.id as string, product)}
+          handleSubmit={(product) =>
+            handleEditProduct(selectItem?.id as string, product)
+          }
         />
       )}
 
       {deleteModal && (
         <Modal
           isOpen={deleteModal}
+          type="delete"
           onClose={() => {
             setSelectItem(null);
             setDeleteModal(false);
           }}
           actionButton={{
-            label: "حذف",
+            label: "بله  ، حذفش کن",
             onClick: () => {
               if (selectItem) handleDeleteProduct(selectItem.id as string);
               setSelectItem(null);
@@ -224,20 +241,20 @@ const handleEditProduct = async (id: string, product: IProduct) => {
           }}
           title="حذف محصول"
         >
-          <div className="flex flex-col gap-5  items-center">
-            <div className="flex items-center gap-6 ">
-              <MessageCircleWarning
-                size={62}
-                className="mb-10 text-indigo-400"
-              />
-              <p className="text-indigo-400 font-bold text-xl">
-                آیا مطمعن هستید که میخواهید این محصول را حذف کنید ؟
+          <div className="flex flex-col gap-5   items-center">
+            <div className="flex items-center gap-6 flex-col  border-2 bg-indigo-50 w-full rounded-xl p-4 shadow-inner border-gray-200">
+              <h4 className="text-indigo-500 font-bold lg:text-2xl">
+                آیا از حذف این محصول اطمینان دارید؟
+              </h4>
+              <p className="text-gray-500  lg:text-sm text-xs flex gap-2 items-center">
+              <CircleAlert size={18} className="text-gray-400"/>   لطفاً توجه داشته باشید که این عملیات غیرقابل بازگشت است
               </p>
             </div>
+
             <div
               className={` ${
                 theme === "light" ? "text-gray-700" : "text-gray-300"
-              }  flex gap-6 border border-indigo-300/50 items-center p-2 rounded-xl`}
+              }  flex gap-6 border border-indigo-300/50 items-center p-2 rounded-xl flex-col lg:flex-row`}
             >
               <img
                 src={selectItem?.image_url}

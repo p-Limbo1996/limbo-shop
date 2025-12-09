@@ -16,6 +16,8 @@ import {
 import { User, Tag, Shield, Truck } from "lucide-react";
 
 import Loading from "../../components/loading/Loading";
+import Admin from "../admin/Admin";
+import ProductInfo from "./ProductInfoTabs";
 
 const ProductDetails = () => {
   const { id: ProductId } = useParams();
@@ -54,6 +56,7 @@ const ProductDetails = () => {
   if (loading) return <Loading />;
 
   return (
+<>
     <div className="flex flex-col lg:flex-row">
       <div
         className={`lg:w-6/12 xl:w-4/12  lg:min-h-[40vh] h-[40vh] lg:max-h-[80vh] min-h-[50vh] flex flex-col  relative
@@ -242,8 +245,12 @@ const ProductDetails = () => {
             </p>
           </div>
         </div>
+
+
       </div>
     </div>
+<ProductInfo/>
+</>
   );
 };
 

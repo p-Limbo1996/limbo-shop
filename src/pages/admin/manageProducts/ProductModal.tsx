@@ -1,5 +1,5 @@
 import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
-import { productFields } from "../../../data/productFormFields";
+import { productFields } from "../../../data/products/productFormFields";
 import Modal from "../../../components/modals/Modal";
 import type { IProduct, TModalType } from "../../../types/productTypes";
 import { useTheme } from "../../../context/themeContext";
@@ -83,6 +83,7 @@ const ProductModal = ({
 
   return (
     <Modal
+    type={type}
       isOpen={isOpen}
       onClose={handleCloseModal}
       actionButton={{
@@ -92,11 +93,7 @@ const ProductModal = ({
       title={`${type === "add" ? "افزودن محصول" : "ویرایش محصول"}`}
     >
       <form className="w-full flex flex-col gap-5" action="">
-        <UploadFile
-          onUploadComplete={(url) =>
-            setFormData((prev) => ({ ...prev, image_url: url }))
-          }
-        />
+    
         {productFields.map((i) => (
           <div className="flex relative flex-col  h-full" key={i.name}>
             <label
@@ -136,6 +133,13 @@ const ProductModal = ({
             />
           </div>
         ))}
+
+    <UploadFile
+          onUploadComplete={(url) =>
+            setFormData((prev) => ({ ...prev, image_url: url }))
+          }
+        />
+
       </form>
     </Modal>
   );

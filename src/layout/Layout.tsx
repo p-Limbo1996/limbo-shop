@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/navbar/Navbar";
 import { Bounce, ToastContainer } from "react-toastify";
+import Footer from "../components/footer/Footer";
 
 interface ILayout {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ const Layout = ({ children }: ILayout) => {
       <div className=" rounded-xl  min-h-[calc(100vh-76px)] py-6 flex flex-col  ">
         {children}
       </div>
+      <Footer/>
     </>
   );
 };

@@ -3,6 +3,7 @@ import Layout from "./layout/Layout";
 import { lazy, Suspense } from "react";
 import { Loader } from "lucide-react";
 import { useTheme } from "./context/themeContext";
+import Home from "./pages/home/Home";
 // import  bg  from "./assets/image/bg.png";
 
 const Store = lazy(() => import("./pages/store/Store"));
@@ -20,10 +21,10 @@ const App = () => {
   return (
     <div className={` transition-all duration-500  ${theme === "light" ? "" : "bg-gray-900 "}`}>
      
-     
+    
       {/* <img src={bg} alt="" className="absolute inset-0 w-full object-top right-0 z-[-1] top-28 h-[40vw] opacity-20" /> */}
       <div
-        className={`container    mx-auto px-4  rounded-xl flex flex-col pt-6  z-10 `}
+        className={`container    mx-auto px-4  rounded-xl flex flex-col py-6  z-10 `}
       >
         <Layout>
           <Suspense
@@ -36,7 +37,7 @@ const App = () => {
             }
           >
             <Routes>
-              <Route path="/" element={<div>Home Page</div>} />
+              <Route path="/" element={<Home />} />
               <Route path="store" element={<Store />} />
               <Route path="cart" element={<Cart />} />
               <Route path="admin" element={<Admin />} />

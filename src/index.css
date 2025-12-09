@@ -5,20 +5,18 @@
   src: url("../src/assets/fonts/IRANSansWeb.ttf");
 }
 
-
-
-*{
+* {
   direction: rtl;
   font-family: "iranSans" !important;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 6px;
   background: #395c89;
   border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   width: 8px;
   background: #4a84d0;
   border-radius: 8px;
@@ -29,36 +27,91 @@
   height: 250px;
   aspect-ratio: 1.2;
   border-radius: 20px;
-  background: #F07818;
-  mask: radial-gradient(var(--r) at var(--r),#0000 calc(100% - 1px),#000) calc(-1*var(--r));
+  background: #f07818;
+  mask: radial-gradient(var(--r) at var(--r), #0000 calc(100% - 1px), #000)
+    calc(-1 * var(--r));
 }
 .modalBox {
-
-  clip-path: polygon(0 12.91px,26px 26px,12.91px 0,calc(100% - 12.91px) 0,calc(100% - 26px) 26px,100% 12.91px,100% calc(100% - 12.91px),calc(100% - 26px) calc(100% - 26px),calc(100% - 12.91px) 100%,12.91px 100%,26px calc(100% - 26px),0 calc(100% - 12.91px));
+  clip-path: polygon(
+    0 12.91px,
+    26px 26px,
+    12.91px 0,
+    calc(100% - 12.91px) 0,
+    calc(100% - 26px) 26px,
+    100% 12.91px,
+    100% calc(100% - 12.91px),
+    calc(100% - 26px) calc(100% - 26px),
+    calc(100% - 12.91px) 100%,
+    12.91px 100%,
+    26px calc(100% - 26px),
+    0 calc(100% - 12.91px)
+  );
 }
-
 
 /* HTML: <div class="rounded-tab"></div> */
 .modalBox-title {
   --r: 25px; /* control the radius */
 
   line-height: 1.8; /* control the height */
-  padding-inline: .5em;
+  padding-inline: 0.5em;
   border-inline: var(--r) solid #0000;
-  border-radius: calc(2*var(--r)) calc(2*var(--r)) 0 0/var(--r);
-  mask: 
-    radial-gradient(var(--r) at var(--r) 0,#0000 98%,#000 101%)
-      calc(-1*var(--r)) 100%/100% var(--r) repeat-x,
+  border-radius: calc(2 * var(--r)) calc(2 * var(--r)) 0 0 / var(--r);
+  mask: radial-gradient(var(--r) at var(--r) 0, #0000 98%, #000 101%)
+      calc(-1 * var(--r)) 100%/100% var(--r) repeat-x,
     conic-gradient(#000 0 0) padding-box;
   background: #2e88bc border-box; /* border-box is needed for a gradient coloration */
   width: fit-content;
 }
 
+.neumorphism {
+  border-radius: 48px;
+  background: #e0e0e0;
+  box-shadow: inset 13px 13px 34px #eeecec, inset -13px -13px 34px #b4addd90;
+}
 
+.fancy-title {
+  padding-right: 16px;
+  border-radius: 83% 17% 84% 16% / 55% 78% 22% 45%;
+}
+.fancy-title2 {
+  border-radius: 94% 6% 94% 6% / 12% 86% 14% 88%;
+}
+.fancy-title3 {
+  border-radius: 97% 3% 98% 2% / 6% 95% 5% 94%;
+}
 
-.neumorphism{
-border-radius: 48px;
-background: #e0e0e0;
-box-shadow: inset 13px 13px 34px #eeecec,
-            inset -13px -13px 34px #b4addd90;
+.blob {
+  aspect-ratio: 1;
+  clip-path: shape(
+    from 17.45% 73.36%,
+    curve to 16.77% 63.81% with 18.44% 67.35%,
+    curve to 10.1% 56.69% with 15.11% 60.26%,
+    curve to 12.26% 49.29% with 5.08% 53.12%,
+    curve to 16.03% 40.61% with 19.44% 45.46%,
+    curve to 18.56% 34.51% with 12.63% 35.76%,
+    curve to 22.25% 26.27% with 24.49% 33.26%,
+    curve to 27.19% 22.09% with 20.01% 19.28%,
+    curve to 34.74% 16.42% with 34.37% 24.9%,
+    curve to 39.71% 6% with 35.12% 7.94%,
+    curve to 48.44% 13.17% with 44.3% 4.05%,
+    curve to 57.61% 16.42% with 52.59% 22.3%,
+    curve to 62.73% 19.23% with 62.63% 10.54%,
+    curve to 69.96% 24.23% with 62.83% 27.93%,
+    curve to 78.21% 24.99% with 77.08% 20.53%,
+    curve to 77.62% 34.34% with 79.33% 29.46%,
+    curve to 83.9% 40.85% with 75.92% 39.22%,
+    curve to 85.04% 46.79% with 91.89% 42.48%,
+    curve to 81.25% 55.03% with 78.18% 51.1%,
+    curve to 82.68% 62.42% with 84.31% 58.97%,
+    curve to 82.55% 71.95% with 81.05% 65.87%,
+    curve to 79.47% 79.89% with 84.05% 78.04%,
+    curve to 72.76% 87.3% with 74.89% 81.74%,
+    curve to 65.88% 95.01% with 70.63% 92.86%,
+    curve to 55.78% 87.98% with 61.13% 97.16%,
+    curve to 47.17% 79.31% with 50.44% 78.79%,
+    curve to 41.21% 77.84% with 43.91% 79.83%,
+    curve to 34.25% 76.51% with 38.51% 75.85%,
+    curve to 23.22% 78.27% with 29.98% 77.18%,
+    curve to 17.45% 73.36% with 16.47% 79.37%
+  );
 }
