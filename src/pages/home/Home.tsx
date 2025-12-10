@@ -11,7 +11,7 @@ const Home = () => {
 const baseStyle= `${theme==="dark"?"bg-gray-800 border-gray-700 text-gray-400":" bg-indigo-50 border-indigo-100"} duration-300`
 
   return (
-    <div className="w-full flex gap-12 flex-col flex-1  h-full">
+    <div className="w-full flex lg:gap-10 flex-col flex-1  h-full">
       <Link to={"/store"} className="relative    ">
         {/* <img
             className=""
@@ -20,10 +20,13 @@ const baseStyle= `${theme==="dark"?"bg-gray-800 border-gray-700 text-gray-400":"
           /> */}
 
         <ImageLoader
-          className=" "
+          className="hidden lg:block"
           src="https://hadlmawwdetqyspyjsaf.supabase.co/storage/v1/object/public/product-images/product-images/11.png"
         />
-        <div className="absolute w-full -bottom-3 fancy-title -z-1 h-6 rounded bg-gray-200/60 blur-sm"></div>
+        <ImageLoader
+          className="lg:hidden "
+          src="https://hadlmawwdetqyspyjsaf.supabase.co/storage/v1/object/public/product-images/product-images/20.png"
+        />
       </Link>
 
       <TopProducts />

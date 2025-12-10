@@ -10,7 +10,7 @@ const ImageLoader = ({ src, alt, className, ...rest }: TImageLoaderProps) => {
     <div className={`relative w-full h-full  ${className || ""}`}>
       {/* Skeleton */}
       {!isLoad && (
-        <div className="absolute inset-0 flex   items-center justify-center shadow rounded-xl animate-pulse">
+        <div className="absolute inset-0 flex   items-center justify-center  rounded-xl animate-pulse">
           <Loader2 className="animate-spin" />
         </div>
       )}

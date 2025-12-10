@@ -16,11 +16,17 @@ const TopProducts = () => {
       {/* <div className="w-full  absolute top-1/2 -z-1 h-42  bg-indigo-50 fancy-title2 rounded-xl"></div> */}
 
       <div className="    w-full  flex flex-col  gap-6">
+        
+
+        
         <h2 className={`font-semibold text-center ${baseStyle} text-md duration-300`}>
           10 محصول پر فروش
         </h2>
+        
+
+    
         <div className="flex items-center gap-4">
-          <button className=" cursor-pointer border rounded-full px-1 border-gray-200 shadow backdrop-blur-3xl bg-gray-50 h-14">
+          <button className="lg:block   hidden cursor-pointer border rounded-full px-1 border-gray-200 shadow backdrop-blur-3xl bg-gray-50 h-14">
             <ChevronRight size={16} />
           </button>
 
@@ -44,7 +50,7 @@ const TopProducts = () => {
               ))}
             </ul>
           </div>
-          <button className=" cursor-pointer border rounded-full px-1 border-gray-200 shadow backdrop-blur-3xl bg-gray-50 h-14">
+          <button className="lg:block  hidden cursor-pointer border rounded-full px-1 border-gray-200 shadow backdrop-blur-3xl bg-gray-50 h-14">
             <ChevronLeft size={16} />
           </button>
         </div>{" "}
