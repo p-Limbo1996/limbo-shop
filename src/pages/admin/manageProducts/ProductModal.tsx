@@ -29,6 +29,9 @@ const ProductModal = ({
     image_url: "",
   });
 
+
+
+
   useEffect(() => {
     if (type === "edit" && product) {
       setFormData({

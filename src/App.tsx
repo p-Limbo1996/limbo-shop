@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import { Loader } from "lucide-react";
 import { useTheme } from "./context/themeContext";
 import Home from "./pages/home/Home";
+import Login from "./pages/login/login";
 // import  bg  from "./assets/image/bg.png";
 
 const Store = lazy(() => import("./pages/store/Store"));
@@ -41,6 +42,7 @@ const App = () => {
               <Route path="store" element={<Store />} />
               <Route path="cart" element={<Cart />} />
               <Route path="admin" element={<Admin />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/about" element={<div>About Page</div>} />
               <Route path="/productDetails/:id" element={<ProductDetails />} />
             </Routes>
