@@ -1,13 +1,22 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { techCategories } from "../categoriesList/CategoriesList";
+import { techCategories } from "../../data/products/category";
+import { useTheme } from "../../context/themeContext";
 
 const TopProducts = () => {
+
+
+
+    const {theme}=useTheme()
+  
+  
+  const baseStyle= `${theme==="dark"?"text-gray-300":" text-gray-700"} `
+  
   return (
     <div className="w-full   relative">
       {/* <div className="w-full  absolute top-1/2 -z-1 h-42  bg-indigo-50 fancy-title2 rounded-xl"></div> */}
 
       <div className="    w-full  flex flex-col  gap-6">
-        <h2 className="font-semibold text-center text-gray-600 text-md">
+        <h2 className={`font-semibold text-center ${baseStyle} text-md duration-300`}>
           10 محصول پر فروش
         </h2>
         <div className="flex items-center gap-4">
@@ -24,7 +33,7 @@ const TopProducts = () => {
                 >
                   <img
                     src={cat.image}
-                    className="group-hover:scale-112 duration-300 transition-all w-full h-40 p-2 object-contain mix-blend-darken "
+                    className="group-hover:scale-112 duration-300 transition-all w-full lg:h-40 h-24 p-2 object-contain mix-blend-darken "
                     alt=""
                   />
                   {/* <div className="text-indigo-500">{cat.icon}</div> */}
