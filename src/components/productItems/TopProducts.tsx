@@ -1,5 +1,4 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { top10 } from "../../data/products/category";
 import { useTheme } from "../../context/themeContext";
 import ProductItem from "./ProductItem";
 import { useProducts } from "../../services/products/useProducts";
