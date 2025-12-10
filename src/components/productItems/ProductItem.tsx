@@ -35,7 +35,7 @@ const ProductItem = (item: IProduct) => {
             className={`
               ${theme === "light" ? "bg-indigo-100 " : "bg-gray-300  "}
               
-              h-40 absolute modalBox neumorphism  rounded-4xl  right-3 left-3  hover:scale-x-[-1]  transition-all duration-300 delay-100
+              h-40 absolute modalBox   rounded-4xl  right-3 left-3    transition-all duration-300 delay-100
           overflow-hidden    
             -top-14   `}
           >
@@ -57,14 +57,14 @@ const ProductItem = (item: IProduct) => {
         {/* body */}
         <div
           dir="auto"
-          className={`
+          className={`duration-300
             
               ${
                 theme === "light"
                   ? "bg-gray-100 border-white"
                   : "bg-gray-700 text-gray-100 border-gray-900 "
               }
-p-3 border-2 border-t-4  rounded-xl`}
+p-3 border-2 border-t-4 h-30  rounded-xl`}
         >
           <h3 className="text-center pb-2 text-indigo-500 line-clamp-1 truncate text-sm ">
             {item?.name}
