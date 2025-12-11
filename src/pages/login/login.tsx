@@ -36,7 +36,7 @@ const Login = () => {
 
     setTimeout(() => {
       setIsAnimating(false);
-    }, 100); // مقدار باید با مدت انیمیشن Tailwind یکی باشه
+    }, 100);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -271,7 +271,7 @@ const Login = () => {
                       رمز عبور خود را فراموش کرده‌اید ؟
                     </p>
                     <button className="bg-indigo-200 text-gray-700 hover:bg-indigo-300/80 w-full rounded-md h-11 shadow border-b-3 border-indigo-300  hover:border-blue-400 cursor-pointer ">
-                       ثبت نام
+                      ثبت نام
                     </button>
                   </form>
                 </div>

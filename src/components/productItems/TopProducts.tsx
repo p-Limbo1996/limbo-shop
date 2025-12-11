@@ -1,8 +1,7 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader } from "lucide-react";
 import { useTheme } from "../../context/themeContext";
 import ProductItem from "./ProductItem";
 import { useProducts } from "../../services/products/useProducts";
-import Loading from "../loading/Loading";
 
 const TopProducts = () => {
   const { data, loading, error } = useProducts();
@@ -11,7 +10,24 @@ const TopProducts = () => {
   if (error) {
     return <>error</>;
   }
-  if (loading) return <Loading />;
+  if (loading) {
+    return (
+      <div className="w-full flex gap-6 mt-2 lg:px-36 p-6 overflow-hidden">
+        <div className="grid grid-cols-2  sm:grid-cols-3 lg:grid-cols-6 w-full gap-4">
+          {Array(6)
+            .fill("")
+            .map((_) => {
+              return (
+                <div className="h-84 animate-spin flex   items-center justify-center px-8 bg-white-300 rounded-xl -mt-6 ">
+                  {" "}
+                  <Loader className="text-indigo-300" />{" "}
+                </div>
+              );
+            })}
+        </div>
+      </div>
+    );
+  }
 
   const baseStyle = `${
     theme === "dark"
@@ -20,7 +36,7 @@ const TopProducts = () => {
   } `;
 
   return (
-    <div className="w-full   relative">
+    <div className="w-full h-full   relative">
       {/* <div className="w-full  absolute top-1/2 -z-1 h-42  bg-indigo-50 fancy-title2 rounded-xl"></div> */}
 
       <div className="    w-full  flex-col lg:flex-row flex lg:-mt-4   gap-6">

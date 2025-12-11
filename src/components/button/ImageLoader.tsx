@@ -1,4 +1,4 @@
-import { Loader2 } from "lucide-react";
+import { Loader } from "lucide-react";
 import { useState, type ComponentProps } from "react";
 
 type TImageLoaderProps = ComponentProps<"img">;
@@ -7,11 +7,11 @@ const ImageLoader = ({ src, alt, className, ...rest }: TImageLoaderProps) => {
   const [isLoad, setIsLoad] = useState(false);
 
   return (
-    <div className={`relative w-full h-full  ${className || ""}`}>
+    <div className={`relative w-full min-h-48  ${className || ""}`}>
       {/* Skeleton */}
       {!isLoad && (
-        <div className="absolute inset-0 flex   items-center justify-center  rounded-xl animate-pulse">
-          <Loader2 className="animate-spin" />
+        <div className="absolute inset-0 flex bg-indigo-50  h-full   items-center justify-center  rounded-xl ">
+          <Loader className="text-indigo-200 animate-spin"/>
         </div>
       )}
 

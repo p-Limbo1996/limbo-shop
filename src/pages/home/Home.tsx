@@ -24,11 +24,13 @@ const Home = () => {
           /> */}
 
         <ImageLoader
-          className="hidden lg:block"
+          className="hidden h-[16vw] lg:block"
           src="https://hadlmawwdetqyspyjsaf.supabase.co/storage/v1/object/public/product-images/product-images/81.png"
         />
+        
+        
         <ImageLoader
-          className="lg:hidden "
+          className="lg:hidden  h-[75vw]"
           src="https://hadlmawwdetqyspyjsaf.supabase.co/storage/v1/object/public/product-images/product-images/20.png"
         />
       </Link>
